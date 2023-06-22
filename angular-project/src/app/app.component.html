@@ -1,0 +1,29 @@
+<div id="main-content">
+    
+    
+    <h1 id="title">Университеты мира</h1>
+
+    <input (ngModel)="state_for_filter" class="navigation-fields" type="text" placeholder="Страна на английском">
+    <input (ngName)="name_for_filter" class="navigation-fields" type="text" placeholder="Имя на английском">
+    <input class="navigation-fields btn" type="button" value="Показать" (onClick)="filterBtnClk()">
+
+    <table>
+        <thead>
+            <tr>
+                <th class="tables-tytle">Страна</th>
+                <th class="tables-tytle">Имя университета</th>
+                <th class="tables-tytle">Электронная почта</th>
+                <th class="tables-tytle">Дата поступления</th>
+                <th class="tables-tytle">Дата выпуска</th>
+                <th class="tables-tytle">Статус</th>
+                <th class="tables-tytle">Задолженность</th>
+            </tr>
+        </thead>
+        <tbody>
+            <app-study *ngFor="let university of universities" [university]="university"></app-study>
+        </tbody>
+    </table>
+
+</div>
+
+
