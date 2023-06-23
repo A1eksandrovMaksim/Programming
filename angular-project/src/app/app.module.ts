@@ -3,20 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StudyComponent } from './components/study/study.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
+
+import { MatButtonModule } from '@angular/material/button'
+import { MatTableModule } from '@angular/material/table'
 
 @NgModule({
   declarations: [
-    AppComponent,
-    StudyComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    MatButtonModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

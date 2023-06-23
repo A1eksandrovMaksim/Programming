@@ -3,26 +3,36 @@
     
     <h1 id="title">Университеты мира</h1>
 
-    <input (ngModel)="state_for_filter" class="navigation-fields" type="text" placeholder="Страна на английском">
-    <input (ngName)="name_for_filter" class="navigation-fields" type="text" placeholder="Имя на английском">
-    <input class="navigation-fields btn" type="button" value="Показать" (onClick)="filterBtnClk()">
+    <input class="navigation-fields" type="text" placeholder="Страна на английском" [(ngModel)]="state_for_filter">
+    <input class="navigation-fields" type="text" placeholder="Имя на английском" [(ngModel)]="name_for_filter">
+    <button mat-raised-button class="navigation-fields btn" (click)="filterBtnClk()">Показать</button>
 
     <table>
-        <thead>
-            <tr>
-                <th class="tables-tytle">Страна</th>
-                <th class="tables-tytle">Имя университета</th>
-                <th class="tables-tytle">Электронная почта</th>
-                <th class="tables-tytle">Дата поступления</th>
-                <th class="tables-tytle">Дата выпуска</th>
-                <th class="tables-tytle">Статус</th>
-                <th class="tables-tytle">Задолженность</th>
-            </tr>
-        </thead>
+        <tr>
+            <th class="tables-tytle">Страна</th>
+            <th class="tables-tytle">Имя университета</th>
+            <th class="tables-tytle">Электронная почта</th>
+            <th class="tables-tytle">Дата поступления</th>
+            <th class="tables-tytle">Дата выпуска</th>
+            <th class="tables-tytle">Статус</th>
+            <th class="tables-tytle">Задолженность</th>
+        </tr>
         <tbody>
-            <app-study *ngFor="let university of universities" [university]="university"></app-study>
+            <ng-container *ngFor="let university of universitiesWithFilter">
+                <tr>
+                    <td class="tables-column">{{university.country}}</td>
+                    <td class="tables-column">{{university.name}}</td>
+                    <td class="tables-column">{{university.domains[0]}}</td>
+                    <td class="tables-column">{{university.admition_date|date:'yyyy-MM-dd'}}</td>
+                    <td class="tables-column">{{university.graduate_date|date:'yyyy-MM-dd'}}</td>
+                    <td class="tables-column">{{university.pay_condition}}</td>
+                    <td class="tables-column">{{university.debt | currency:'USD':true:'1.2-2'}}</td>
+                </tr>
+            </ng-container>
         </tbody>
     </table>
+
+    <h1 *ngIf="isLoading">Loading ...</h1>
 
 </div>
 

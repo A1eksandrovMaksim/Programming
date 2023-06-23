@@ -11,29 +11,53 @@ import { IUniversity } from './components/models/university';
 
 export class AppComponent implements OnInit{
   title = 'angular-project';
+  universitiesWithFilter: University[] = [];
   universities: University[] = [];
-  state_for_filter:string = '';
-  name_for_filter:string = '';
+  public state_for_filter:string = '';
+  public name_for_filter:string = '';
+  isLoading: boolean = false;
 
-  constructor(private universityService: UniversityService){
-
-  }
+  constructor(private universityService: UniversityService){}
   
   ngOnInit(): void {
+    this.isLoading = true;
     this.universityService.getAll().subscribe((unties)=>{
-      unties.forEach( (unty: IUniversity):void =>{ 
-        this.universities.push(new University(unty))
-      })
+        unties.forEach( (unty: IUniversity):void =>{ 
+          this.universities.push(new University(unty))
+        })
+        this.universities.sort(this.sortfunc)
+        this.isLoading = false;
+        this.universitiesWithFilter = this.universities.slice(0)
     })
   }
 
+  private sortfunc(au: University, bu: University):number{
+    if(au.country === bu.country)
+            if(au.name === bu.name)
+              return 0
+            else
+              if(au.name > bu.name)
+                return 1
+              else
+                return -1
+          else
+            if(au.country > bu.country)
+              return 1
+            else
+              return -1
+  }
+
+  
+
   filterBtnClk(): void{
-    this.universities = []
-    this.universityService.getAllWithFilter(this.state_for_filter, this.name_for_filter).subscribe((unties)=>{
-      unties.forEach( (unty: IUniversity):void =>{ 
-        this.universities.push(new University(unty))
-      })
+    this.universitiesWithFilter = []
+    this.isLoading = true;
+    this.universities.forEach((unty: University):void =>{ 
+      if(unty.country.toLowerCase().search(this.state_for_filter.toLowerCase()) !== -1 || !this.state_for_filter)
+        if(unty.name.toLowerCase().search(this.name_for_filter.toLowerCase()) !== -1 || !this.name_for_filter)
+          this.universitiesWithFilter.push(unty)
     })
+    this.isLoading = false;
   }
 
 }
