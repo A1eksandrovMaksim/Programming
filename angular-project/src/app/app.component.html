@@ -7,33 +7,48 @@
     <input class="navigation-fields" type="text" placeholder="Имя на английском" [(ngModel)]="name_for_filter">
     <button mat-raised-button class="navigation-fields btn" (click)="filterBtnClk()">Показать</button>
 
-    <table>
-        <tr>
-            <th class="tables-tytle">Страна</th>
-            <th class="tables-tytle">Имя университета</th>
-            <th class="tables-tytle">Электронная почта</th>
-            <th class="tables-tytle">Дата поступления</th>
-            <th class="tables-tytle">Дата выпуска</th>
-            <th class="tables-tytle">Статус</th>
-            <th class="tables-tytle">Задолженность</th>
-        </tr>
-        <tbody>
-            <ng-container *ngFor="let university of universitiesWithFilter">
-                <tr>
-                    <td class="tables-column">{{university.country}}</td>
-                    <td class="tables-column">{{university.name}}</td>
-                    <td class="tables-column">{{university.domains[0]}}</td>
-                    <td class="tables-column">{{university.admition_date|date:'yyyy-MM-dd'}}</td>
-                    <td class="tables-column">{{university.graduate_date|date:'yyyy-MM-dd'}}</td>
-                    <td class="tables-column">{{university.pay_condition}}</td>
-                    <td class="tables-column">{{university.debt | currency:'USD':true:'1.2-2'}}</td>
-                </tr>
-            </ng-container>
-        </tbody>
+    <table mat-table [dataSource]="universitiesWithFilter" class="mat-elevation-z8">
+        
+        <ng-container matColumnDef="country">
+          <mat-header-cell class="header-cell" *matHeaderCellDef>Страна</mat-header-cell>
+          <mat-cell class="cell" *matCellDef="let element"> {{element.country}} </mat-cell>
+        </ng-container>
+      
+        <ng-container matColumnDef="name">
+          <mat-header-cell class="header-cell" *matHeaderCellDef>Имя университета</mat-header-cell>
+          <mat-cell class="cell" *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+      
+        <ng-container matColumnDef="domains">
+          <mat-header-cell class="header-cell" *matHeaderCellDef>Электронная почта</mat-header-cell>
+          <mat-cell class="cell" *matCellDef="let element"> {{element.domains[0]}} </mat-cell>
+        </ng-container>
+      
+        <ng-container matColumnDef="admition_date">
+          <mat-header-cell class="header-cell" *matHeaderCellDef>Дата поступления</mat-header-cell>
+          <mat-cell class="cell" *matCellDef="let element"> {{element.admition_date|date:'yyyy-MM-dd'}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="graduate_date">
+            <mat-header-cell class="header-cell" *matHeaderCellDef>Дата выпуска</mat-header-cell>
+            <mat-cell class="cell" *matCellDef="let element"> {{element.graduate_date|date:'yyyy-MM-dd'}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="pay_condition">
+            <mat-header-cell class="header-cell" *matHeaderCellDef>Статус</mat-header-cell>
+            <mat-cell class="cell" *matCellDef="let element"> {{element.pay_condition}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="debt">
+            <mat-header-cell class="header-cell" *matHeaderCellDef>Задолженность</mat-header-cell>
+            <mat-cell class="cell" *matCellDef="let element"> {{element.debt | currency:'USD':true:'1.2-2'}} </mat-cell>
+        </ng-container>
+      
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </table>
 
     <h1 *ngIf="isLoading">Loading ...</h1>
-
 </div>
 
 

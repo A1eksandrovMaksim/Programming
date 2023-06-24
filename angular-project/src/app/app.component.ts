@@ -16,6 +16,7 @@ export class AppComponent implements OnInit{
   public state_for_filter:string = '';
   public name_for_filter:string = '';
   isLoading: boolean = false;
+  displayedColumns: string[] = ['country', 'name', 'domains', 'admition_date', 'graduate_date', 'pay_condition', 'debt'];
 
   constructor(private universityService: UniversityService){}
   
