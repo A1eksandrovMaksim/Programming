@@ -1,0 +1,53 @@
+create table level_tb
+(
+	level_id serial primary key,
+	number_of_level integer unique,
+	discription text,
+	falling_speed real not NULL,
+	enable_net_mode bool not NULL,
+	points_for_line integer not NULL
+);
+
+create table sublevel
+(
+	sublevel_id serial primary key,
+	sublevel_id_in_level int not NULL,
+	limit_points bigint not NULL,
+	level_id serial references level_tb(level_id)
+);
+
+create table glass
+(
+	glass_id serial primary key,
+	height integer not NULL,
+	width integer not NULL,
+	in_game boolean not NULL,
+	level_id serial references level_tb(level_id)
+	
+);
+
+create table block
+(
+	block_id serial primary key,
+	state_map int not NULL,
+	in_game boolean not NULL,
+	level_id serial references level_tb(level_id)
+);
+
+
+
+create table user_tb
+(
+	user_id serial primary key,
+	login varchar(32) unique not NULL,
+	users_password varchar(32) not NULL
+);
+
+create table statistic
+(
+	statistic_id serial primary key,
+	stat_time bigint,
+	points bigint,
+	user_id serial references user_tb(user_id),
+	level_id serial references level_tb(level_id)
+)
