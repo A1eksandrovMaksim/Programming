@@ -1,0 +1,9 @@
+<div id="eclipse">
+    <div class="contentHolder">
+        <h1 id="modalTytle">{{title | titlecase}}</h1>
+        <ng-content></ng-content>
+    </div>
+    <div id="btnCloseHolder">
+        <button id="closeBtn" (click)="modalService.close()">&times;</button>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<app-error></app-error>
+<app-modal *ngIf="modalService.isVisibleAddGroup$ | async" title="New Group">
+    <app-add-group (emitter)="shouldRefreshList($event)"></app-add-group>
+</app-modal>
+<app-modal *ngIf="modalService.isVisibleAddStudent$ | async" title="New Student">
+    <app-add-student [groupId]="idGroupOfNewStudent" (emitter)="shouldRefreshList($event)"></app-add-student>
+</app-modal>
+<app-modal *ngIf="modalService.isVisibleEditStudent$ | async" title="Edit Student">
+    <app-edit-student [editStudent]="editStudentObj" (emitter)="shouldRefreshList($event)"></app-edit-student>
+</app-modal>
+<app-modal *ngIf="modalService.isVisibleEditGroup$ | async" title="New Group">
+    <app-edit-group (emitter)="shouldRefreshList($event)" [editGroup]="editGroupObj"></app-edit-group>
+</app-modal>
+<app-modal *ngIf="modalService.isVisibleLogin$ | async" title="Authentication">
+    <app-login (emmiter)="shouldRefreshList($event)"></app-login>
+</app-modal>
+
+
+
+<div id="mainPageProperty">
+    <div id="mainPageHolder">
+        <button (click)="modalService.openLogin()">Authentication</button>
+        <h1>[My Frontend Page]</h1>
+        <button id="btnAddGroup" (click)="modalService.openAddGroup()">Add Group</button>
+    </div>
+    <div id="groupsHolder">
+        <div *ngFor="let group of groups">
+            <app-group [group]="group" (deleteGroupEvent)="shouldRefreshList($event)"
+                (editGroupEmit)="editGroup($event)"
+                (addStudent)="addStudent($event)">
+                <app-student *ngFor="let student of group.students" [student]="student"
+                (emitter)="shouldRefreshList($event)"
+                (editStudentEmit)="editStudent($event)"></app-student>
+            </app-group>
+        </div>
+    </div>
+</div>

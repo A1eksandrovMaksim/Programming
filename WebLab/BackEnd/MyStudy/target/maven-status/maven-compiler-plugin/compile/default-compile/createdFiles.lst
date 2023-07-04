@@ -1,0 +1,5 @@
+com\ssau\mystudy\repository\StudentRepository.class
+com\ssau\mystudy\StudyApplication.class
+com\ssau\mystudy\controller\StudentController.class
+com\ssau\mystudy\entity\Student.class
+com\ssau\mystudy\repository\JdbcStudentRepository.class

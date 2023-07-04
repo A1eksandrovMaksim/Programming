@@ -1,0 +1,14 @@
+#studentHolder{
+    display: flex;
+    flex-direction: column;
+}
+button{
+    background-color: gold;
+    color: gold;
+    border-style: dashed;
+    background-color: goldenrod;
+    border-radius: 1rem;
+    padding-left: 1rem; padding-right: 1rem;
+    padding-top: 0.2rem; padding-bottom: 0.2rem;
+    margin-bottom: 2rem;
+}

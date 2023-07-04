@@ -1,0 +1,13 @@
+<div id="groupHolder">
+    <div id="nameHolder">
+        <h1 id="groupName">{{group.name}}</h1>
+    </div>
+    <div id="buttonsHolder">
+        <button (click)="editGroup()">Edite Group</button>
+        <button  (click)="addNewStudent()">Add Student</button>
+        <button (click)="deleteGroup()">Delete Group</button>
+    </div>
+    <div id="studentsHolder">
+        <ng-content></ng-content>
+    </div>
+</div>

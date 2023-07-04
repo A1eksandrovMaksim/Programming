@@ -1,0 +1,54 @@
+header{
+	background-color: green;
+	padding: 20px;
+	color: honeydew;
+}
+
+div{
+	text-align: center;
+	border-color: black;
+}
+
+html, body, #content{
+	height: 100%;
+}
+
+
+.main-space, .sidebar{
+	margin: auto;
+	display: inline;
+}
+
+.sidebar{
+	margin: auto;
+}
+.div-in-reg-form{
+	background-color: white; 
+	padding: 10px;
+}
+
+
+#registration-form{
+	margin: 20px;
+	padding: 10px; 
+	border-style: solid; 
+	border-color: green; 
+	background-color: white;
+	display: inline-block;
+}
+
+#content{
+	align-content: center;
+}
+
+#button{
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: green;
+	color: white;
+	font-size: 14pt;
+	border-radius: 5px;
+	border-style: solid;
+}

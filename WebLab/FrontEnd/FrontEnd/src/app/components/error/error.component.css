@@ -1,0 +1,18 @@
+#errorHolder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: white;
+    height: 50px;
+    position: relative;
+}
+#closeBtn{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    background-color: red;
+    border-width: 1px;
+    border-radius: 15px;
+}

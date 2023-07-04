@@ -1,0 +1,13 @@
+<div id="studentHolder">
+    <h3 id="nameHeader">{{student.name | titlecase}}</h3>
+    <div id="studentDataHolder">
+        <h5 class="userData">Birthdate: {{student.birthdate | date}}</h5>
+        <h5 class="userData">Number: {{student.number | number}}</h5>
+    </div>
+</div>
+<div id="buttonsHolder">
+    <button (click)="editStudent()">Edit</button>
+    <button (click)="deleteStudent()">Delete</button>
+</div> 
+
+  

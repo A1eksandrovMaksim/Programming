@@ -1,0 +1,10 @@
+com\mycompany\mywebproject\entities\EntityGroup.class
+com\mycompany\mywebproject\repos\StudentRepository.class
+com\mycompany\mywebproject\dto\DtoGroup.class
+com\mycompany\mywebproject\repos\GroupRepository.class
+com\mycompany\mywebproject\services\Service.class
+com\mycompany\mywebproject\controllers\GroupController.class
+com\mycompany\mywebproject\entities\EntityStudent.class
+com\mycompany\mywebproject\controllers\StudentController.class
+com\mycompany\mywebproject\dto\DtoStudent.class
+com\mycompany\mywebproject\Main.class

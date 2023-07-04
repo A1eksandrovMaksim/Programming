@@ -1,0 +1,13 @@
+com\mycompany\myprotectedjpaapplication\configurations\SecurityConfiguration.class
+com\mycompany\myprotectedjpaapplication\entities\EStudent.class
+com\mycompany\myprotectedjpaapplication\controllers\StudentController.class
+com\mycompany\myprotectedjpaapplication\dto\Student.class
+com\mycompany\myprotectedjpaapplication\repositories\StudentRepository.class
+com\mycompany\myprotectedjpaapplication\services\StudentService.class
+com\mycompany\myprotectedjpaapplication\dto\Group.class
+com\mycompany\myprotectedjpaapplication\exceptions\UniversalException.class
+com\mycompany\myprotectedjpaapplication\services\GroupService.class
+com\mycompany\myprotectedjpaapplication\repositories\GroupRepository.class
+com\mycompany\myprotectedjpaapplication\entities\EGroup.class
+com\mycompany\myprotectedjpaapplication\controllers\GroupController.class
+com\mycompany\myprotectedjpaapplication\MyProtectedJpaApplication.class

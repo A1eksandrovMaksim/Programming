@@ -1,0 +1,8 @@
+<div id="inputsHolder">
+    <input type="text" placeholder="Student Name ..." [(ngModel)]="editStudent.name">
+    <input type="number" pattern="\d*" [(ngModel)]="editStudent.number">
+    <input type="date" [(ngModel)]="editStudent.birthdate">
+    <button (click)="put()">Post</button>
+</div> 
+<app-error></app-error>
+ 
