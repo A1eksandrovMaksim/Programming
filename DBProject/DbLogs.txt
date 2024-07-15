@@ -1,0 +1,5 @@
+DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=non_residential_fund;trustServerCertificate=true;encrypt=true")
+DriverManager.initialize: jdbc.drivers = null
+JDBC DriverManager initialized
+    trying com.microsoft.sqlserver.jdbc.SQLServerDriver
+getConnection returning com.microsoft.sqlserver.jdbc.SQLServerDriver
