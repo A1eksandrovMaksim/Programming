@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LastBlank" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d79f6fb-d185-450c-9f69-666f654d9224">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="Date" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="registrationNumber" class="java.lang.String"/>
+	<field name="place" class="java.lang.String"/>
+	<field name="numberOfFloors" class="java.lang.String"/>
+	<field name="dateOfConstruction" class="java.lang.String"/>
+	<title>
+		<band height="26">
+			<textField>
+				<reportElement x="70" y="3" width="440" height="22" uuid="64f2e658-310b-425e-95d5-00218ad27897"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$P{Date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="24">
+			<staticText>
+				<reportElement x="70" y="0" width="140" height="24" uuid="4399113b-f521-48eb-bed2-ea001d76f663"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Регистрационный номер]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="0" width="90" height="24" uuid="f109b3cf-a229-4437-83b5-2ea53d6fa45d"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Площадь]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="70" height="24" uuid="3f1d1c35-d2c7-45aa-99bc-61f6d5b5c635"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[К-во этажей]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="0" width="140" height="24" uuid="13aad8ef-3e9c-4268-a3c3-7dd3dbdc8cac"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Дата постройки]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="51">
+			<textField>
+				<reportElement x="70" y="0" width="140" height="30" uuid="757ffc91-c2aa-43ce-900f-5e7096e140d7"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{registrationNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="0" width="90" height="30" uuid="102030de-fc3b-4dcb-974f-693bdce1afff"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{place}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="70" height="30" uuid="19686446-da67-44dc-b249-366139fde5e7"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{numberOfFloors}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="140" height="30" uuid="4fa5fdd4-ed5a-4790-b77a-9030bae1504e"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dateOfConstruction}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
